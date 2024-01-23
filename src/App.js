@@ -1,23 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Book from './components/Book';
+import CreateBook from './components/CreateBook';
+import { useEffect, useState } from 'react';
+import fetchData from './utils/apiCalls/getData';
+import { Spinner } from 'reactstrap';
+
 
 function App() {
+
+  const [isLoading, setIsLoading] = useState(false)
+  const [books, setBooks] = useState([])
+
+  const fetchAndSetState = async () => {
+    setIsLoading(true)
+    setBooks(await fetchData())
+    setIsLoading(false)
+  }
+
+  useEffect(() => {
+    fetchAndSetState()
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Book Management App</h1>
+      <Book />
+
     </div>
   );
 }
