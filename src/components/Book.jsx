@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardTitle, CardText, Button, ButtonGroup } from 'reactstrap'
+import { Card, CardTitle, CardText, Button, ButtonGroup, CardHeader } from 'reactstrap'
 
 /*
 book name
@@ -25,20 +25,12 @@ date
 // "finished_reading": false,
 // "want_to_read": false
 
-export default function Book({name, author, quantity, price, date}) {
+export default function Book({title, author, publisher, }) {
   return (
-    <Card body className="my-2" style={{width: '18rem'}}>
-        <CardTitle tag="h5">{name}</CardTitle>
-        <CardText>Author: {author}</CardText>
-        <CardText>Quantity: {quantity}</CardText>
-        <CardText>Price: {price}</CardText>
-        <CardText>Date: {date}</CardText>
-        <ButtonGroup>
-            <Button color="primary">Edit</Button>
-            <Button color="danger">Delete</Button>
-            <Button><i className='fa fa-car'></i></Button>
-            <Button><i className="fa fa-trash"></i></Button>
-        </ButtonGroup>
+    <Card className="my-2" style={{width: '18rem'}}>
+      <CardHeader>{title}</CardHeader>
+      <CardText>Author: {author}</CardText>
+      <CardText>Publisher: {publisher}</CardText>
     </Card>
   )
 }
