@@ -10,7 +10,6 @@ export default function Categories({activeCategory, setActiveCategory}) {
     const capitilize = (text) => {
         return text.charAt(0).toUpperCase().concat(text.slice(1))
     }
-
     return (
     <ButtonGroup>
         {categories.map(category => {
