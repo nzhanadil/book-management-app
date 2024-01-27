@@ -1,14 +1,6 @@
 import React from 'react'
 import { Card, CardTitle, CardText, Button, ButtonGroup, CardHeader } from 'reactstrap'
 
-/*
-book name
-book author
-quantity
-price
-date
-*/
-
 // "id": "1",
 // "isbn": 9780415924986,
 // "lang": "eng",
